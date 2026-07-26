@@ -8,11 +8,13 @@
     --bg-color: #fbfaf7;
     --surface-color: rgba(255, 255, 255, 0.85);
     --surface-solid: #ffffff;
+    --card-bg: var(--surface-solid);
     --primary-color: #3e5e24; /* Deep foliage green */
     --primary-hover: #2d451a;
     --text-color: #272f22; /* Deep forest charcoal */
     --text-muted: #5e6856;
     --accent-color: #bfa054; /* Warm brass gold */
+    --accent-darker: #8b7132; /* Darker gold for hover underlines */
     --accent-hover: #a38541;
     --border-color: #e3e6df;
     --shadow-color: rgba(62, 94, 36, 0.08);
@@ -32,12 +34,13 @@ body.dark-theme {
     --bg-color: #12160e; /* Deep dark charcoal green */
     --surface-color: rgba(22, 28, 18, 0.8);
     --surface-solid: #1a2015;
+    --card-bg: var(--surface-solid);
     --primary-color: #7da559; /* Soft light sage green */
     --primary-hover: #96bd72;
     --text-color: #f2f5f0;
     --text-muted: #a3ad9c;
     --accent-color: #e5c169;
-    --accent-hover: #f0d283;
+    --accent-darker: #b39343; /* Darker gold for hover underlines */
     --border-color: #262e1e;
     --shadow-color: rgba(0, 0, 0, 0.4);
     --header-bg: rgba(18, 22, 14, 0.85);
@@ -246,6 +249,7 @@ body.dark-theme #site-header.scrolled .header-since {
     display: flex;
     list-style: none;
     gap: 1.5rem;
+    position: relative;
 }
 
 .nav-link {
@@ -269,20 +273,31 @@ body.dark-theme #site-header.scrolled .header-since {
     opacity: 1;
 }
 
-/* Active Navigation Underline */
+/* Active Navigation Underline (Disabled old static underline in favor of new sliding line) */
 .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    transition: width var(--transition-speed) ease;
+    display: none !important;
 }
 
-.nav-link.active::after {
-    width: 100%;
+.nav-active-line {
+    position: absolute;
+    bottom: -2px;
+    height: 3px;
+    background-color: var(--accent-color);
+    transition: left 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+}
+
+.nav-hover-line {
+    position: absolute;
+    bottom: -2px;
+    height: 3px;
+    background-color: var(--accent-darker);
+    transition: left 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), width 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.2s ease;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 1;
 }
 
 /* Header Actions */
@@ -452,6 +467,7 @@ section {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
+    color: var(--accent-color);
 }
 
 .header-line {
@@ -483,6 +499,18 @@ section {
     margin-bottom: 1.5rem;
     font-size: 1.05rem;
     text-align: justify;
+}
+
+/* Inline text links within body copy */
+.inline-link {
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+    transition: color var(--transition-speed) ease, opacity var(--transition-speed) ease;
+}
+.inline-link:hover {
+    opacity: 0.75;
 }
 
 .about-highlights {
@@ -1101,7 +1129,7 @@ footer {
 
 .footer-bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
@@ -1428,34 +1456,75 @@ footer {
 
 /* Mobile Menu Slidedown Overlay style */
 @media (max-width: 991px) {
+    /* Mobile header */
+    #site-header {
+        padding: 1.1rem 0;
+    }
+    #site-header.scrolled {
+        padding: 0.6rem 0;
+    }
+
     .header-container {
-        padding: 0 1.5rem;
+        padding: 0 1rem;
+        position: static;
+    }
+
+    /* Logo in header on mobile */
+    #site-header .logo-img {
+        height: 52px !important;
+    }
+    #site-header .header-since {
+        font-size: 0.65rem;
+        margin-top: -2px;
+        padding-bottom: 0.4rem;
     }
     
     .mobile-btn {
         display: flex;
+        font-size: 1.4rem;
+        margin-top: 0.3rem;
+        margin-right: 0.5rem;
+    }
+
+    /* Centre burger icon when at Home top (blended state) */
+    /* Logo-link is visually hidden but still in flow — remove from layout to allow centering */
+    #site-header.blended .logo-link {
+        display: none !important;
+    }
+    #site-header.blended .header-container {
+        justify-content: center;
     }
 
     .nav-menu {
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 0;
         left: 0;
+        right: 0;
         width: 100%;
         background-color: var(--header-bg);
         border-bottom: 1px solid var(--border-color);
         box-shadow: 0 10px 20px var(--shadow-color);
-        padding: 2rem;
+        padding: 0 2rem;
+        max-height: 0;
+        overflow: hidden;
         backdrop-filter: blur(12px);
-        transform: translateY(-120%);
         opacity: 0;
         pointer-events: none;
-        z-index: -1;
+        z-index: 999;
+        transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
     }
 
     .nav-menu.open {
-        transform: translateY(0);
+        max-height: 500px;
+        padding: 2rem;
         opacity: 1;
         pointer-events: auto;
+    }
+
+    /* Shrink email address to fit one line on mobile */
+    .email-address-text {
+        font-size: 1rem !important;
+        word-break: normal !important;
     }
 
     .nav-list {
@@ -1473,6 +1542,12 @@ footer {
         display: none;
     }
 
+    /* Hide sliding underline indicators on mobile */
+    .nav-active-line,
+    .nav-hover-line {
+        display: none !important;
+    }
+
     .about-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -1480,7 +1555,7 @@ footer {
 
     .about-image-wrapper {
         order: -1;
-        max-width: 500px;
+        max-width: 160px;
         margin: 0 auto;
     }
 
@@ -1495,6 +1570,15 @@ footer {
 
     .breed-gallery .gallery-item img {
         height: 280px;
+    }
+
+    /* Gallery: 2 per row on mobile */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+    }
+    .gallery-grid .gallery-item {
+        aspect-ratio: 1/1;
     }
 
     .contact-grid {
@@ -1518,6 +1602,11 @@ footer {
         font-size: 2.1rem;
     }
 
+    .about-highlights {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
     .hero-title {
         font-size: 2.2rem;
     }
@@ -1531,12 +1620,17 @@ footer {
         margin-bottom: 2rem;
     }
 
+    .hero-logo-wrapper {
+        margin-bottom: 0;
+    }
+
     .hero-logo-img {
         height: 120px;
     }
 
     .hero-since {
         font-size: 1.8rem;
+        margin-top: 0;
     }
 
     .hero-buttons {
@@ -1549,11 +1643,6 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-    }
-
-    .about-highlights {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
 
     .timeline::before {
@@ -1816,6 +1905,18 @@ footer {
     gap: 1rem;
 }
 
+.lightbox-credit {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 0.4rem 1rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-credit.hidden {
+    display: none;
+}
+
 .control-btn {
     width: auto;
     height: auto;
@@ -1881,6 +1982,11 @@ footer {
         width: 100%;
         justify-content: space-between;
     }
+    /* Mobile non‑lightbox images: shrink to fit */
+    img:not(.lightbox-image) {
+        max-width: 90%;
+        height: auto;
+    }
 }
 
 /* ==========================================================================
@@ -1910,10 +2016,10 @@ footer {
 }
 
 .breed-diagram-wrapper {
-    width: 100%;
     max-width: 800px;
     margin: 2rem auto;
     position: relative;
+    padding-bottom: 2rem;
 }
 
 .diagram-image-container {
@@ -1958,6 +2064,7 @@ footer {
     border: 2px solid #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    box-sizing: border-box;
 }
 
 .diagram-hotspot:hover .hotspot-pin {
@@ -1969,15 +2076,16 @@ footer {
 .hotspot-pin::after {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    width: 24px;
-    height: 24px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     border: 2px solid var(--accent-color);
     box-shadow: 0 0 8px var(--accent-color);
     animation: pinPulse 2s infinite;
     pointer-events: none;
+    box-sizing: border-box;
 }
 
 @keyframes pinPulse {
@@ -2100,6 +2208,71 @@ body.dark-theme .hotspot-card h4 {
         background-color: var(--surface-solid) !important;
         border: 1px solid var(--border-color) !important;
     }
+}
+
+/* Breed Characteristics split-panel layout on desktop */
+@media (min-width: 769px) {
+    .breed-diagram-wrapper {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 2.5rem !important;
+        max-width: 960px !important;
+        width: 100% !important;
+        margin: 2rem auto !important;
+        padding-bottom: 3.5rem !important;
+    }
+    
+    .diagram-image-container {
+        flex: 0 0 380px !important;
+        max-width: 380px !important;
+    }
+    
+    .diagram-info-panel {
+        flex: 1 !important;
+        min-height: 250px !important;
+        background: var(--card-bg) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: var(--border-radius-lg) !important;
+        padding: 2.5rem !important;
+        box-shadow: 0 10px 30px var(--shadow-color) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    /* Hide card popups overlaying the image on desktop - content read by JS */
+    .hotspot-card {
+        display: none !important;
+    }
+    
+    .diagram-hotspot.active .hotspot-pin {
+        background-color: var(--primary-color) !important;
+        transform: scale(1.2) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .diagram-info-panel {
+        display: none !important;
+    }
+}
+
+/* Enlarged titles inside breed characteristics info panel */
+.diagram-info-panel h4,
+.diagram-info-panel .info-title {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 1rem !important;
+    color: var(--accent-color) !important;
+    font-family: var(--font-heading) !important;
+}
+
+body.dark-theme .diagram-info-panel h4,
+body.dark-theme .diagram-info-panel .info-title {
+    color: var(--accent-color) !important;
 }
 
 /* Breed Actions Container & Buttons */
@@ -2562,5 +2735,109 @@ a.timeline-content:hover h3 {
     padding-bottom: 6rem !important;
 }
 
+/* Mobile hero: full viewport height and centered */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 100vh !important;
+        height: 100dvh !important;
+        min-height: 520px !important;
+        background-size: cover !important;
+        background-position: 30% 30% !important;
+        background-attachment: scroll !important;
+    }
 
+    .about-image-wrapper {
+        max-width: 280px;
+    }
 
+    .image-overlay-card {
+        display: none;
+    }
+
+    /* Mobile: stack breed action buttons vertically (Prompt 4) */
+    .breed-actions {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1rem !important;
+    }
+    .breed-actions .btn {
+        width: 100% !important;
+        max-width: 280px !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+
+    /* Mobile: hero buttons stacked */
+    .hero-buttons {
+        bottom: 6.5rem !important;
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: calc(100% - 3rem) !important;
+        max-width: 280px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+}
+
+/* Prompt 14: White paragraph and caption text (dark theme) */
+body.dark-theme p, body.dark-theme figcaption, .lightbox-caption, .caption {
+    color: #ffffff !important;
+}
+
+/* Prompt 20: Button animation centering */
+.btn::after {
+    transform-origin: center !important;
+}
+
+/* Gallery images clickable cursor */
+.gallery-grid .gallery-item {
+    cursor: zoom-in;
+}
+
+/* Sire / Stallion card image sizing */
+.bull-card-img-container {
+    max-height: 320px !important;
+}
+
+.bull-card-img-container img {
+    object-fit: contain !important;
+    max-height: 320px !important;
+}
+
+/* Photo credit caption - Contact section */
+.photo-credit {
+    text-align: center;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--text-muted) !important;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
+/* Photo credit overlay - Gallery items */
+.photo-credit-overlay {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.65rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Remove borders and backgrounds from article images */
+.article-content img,
+.article-content figure,
+.article-content .wp-block-image,
+.article-content .wp-block-gallery {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+}

@@ -1,0 +1,439 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suncrest Family Horse Register | Suncrest Stud</title>
+    <meta name="description" content="Legacy website of Suncrest Stud, breeders of purebred registered White Galloway Cattle and American Miniature Horses in Upper Hutt, New Zealand.">
+    
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styling -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* Subpage Custom Styles */
+        .subpage-container {
+            max-width: 1200px;
+            margin: 100px auto 40px;
+            padding: 0 2rem;
+        }
+        .subpage-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 2rem;
+        }
+        .subpage-header h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+        .subpage-header .subtitle {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        .header-line {
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 1.5rem auto 0;
+            border-radius: 2px;
+        }
+        .rich-text {
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--text-color);
+        }
+        .rich-text p {
+            margin-bottom: 1.5rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .back-btn:hover {
+            color: var(--accent-color);
+        }
+        .subpage-hero-banner {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: contain;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px var(--shadow-color);
+        }
+        
+        /* Lightbox compatibility classes for images */
+        .clickable-img {
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .clickable-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px var(--shadow-color);
+        }
+        
+        
+    </style>
+</head>
+<body class="dark-theme">
+
+    <!-- Header Navigation -->
+    <header id="site-header" class="scrolled">
+        <div class="header-container">
+            <a href="index.html#home" class="logo-link" id="logo" style="opacity: 1; visibility: visible; pointer-events: auto;">
+                <div class="header-logo-container">
+                    <img src="suncrestclear.png" alt="Suncrest Stud" class="logo-img">
+                    <span class="header-since">Since 1989</span>
+                </div>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#about" class="nav-link">About Us</a></li>
+                    <li><a href="index.html#galloways" class="nav-link ">Cattle</a></li>
+                    <li><a href="index.html#horses" class="nav-link active">Horses</a></li>
+                    <li><a href="index.html#news" class="nav-link">News</a></li>
+                    <li><a href="index.html#history" class="nav-link">History</a></li>
+                    <li><a href="index.html#resources" class="nav-link">Resources</a></li>
+                    <li><a href="index.html#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button id="mobile-toggle" class="mobile-btn" aria-label="Toggle Menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="subpage-container">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Homepage</a>
+        
+        <div class="subpage-header">
+            <h1>American Miniature Horses</h1>
+            <div class="header-line"></div>
+        </div>
+
+
+        <section class="stallions-section" style="padding: 0 0 3rem 0;">
+            <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 2rem; color: var(--primary-color);">Stallions</h2>
+            
+            <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+    
+                <div class="stallion-card" style="background: var(--card-bg); border-radius: var(--border-radius-md); overflow: hidden; box-shadow: 0 4px 15px var(--shadow-color); border: 1px solid var(--border-color); display: flex; flex-direction: column; md-flex-direction: row; transition: transform 0.3s ease;">
+                    <div class="bull-card-img-container" style="overflow: hidden; position: relative; background-color: var(--card-bg);">
+                        <img src="Suncrest-Smokey-the-Bandit.jpg" alt="[SOLD] Suncrest Smokey the Bandit" style="width: 100%; height: 100%; object-fit: contain; background-color: var(--card-bg);" class="clickable-img" onclick="openLightbox(this.src, this.alt)">
+                        <span style="position: absolute; top: 1rem; left: 1rem; background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;">Stallion</span>
+                    </div>
+                    <div style="padding: 2rem; flex: 1;">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.75rem; color: var(--primary-color); margin-bottom: 1rem;">[SOLD] Suncrest Smokey the Bandit</h3>
+                        
+                        <ul style="list-style: none; padding-left: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem; font-size: 0.9rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                            <li><strong>Registration:</strong> AMHA - A140597 / NZMHA - 1128</li>
+                            <li><strong>Date of birth:</strong> 10 November 1992</li>
+                            <li><strong>Height:</strong> 32.25”</li>
+                            <li><strong>Colour:</strong> Silver dapple bay pinto</li>
+                        </ul>
+                        
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-color);">Passing on his colour, conformation, presence and personality plus, Smokey as he is affectionately known, has a wonderful temperament and is a pre-potent sire of numerous classy progeny (refer NZMHA Stud Book). During his exhibiting and show days, Smokey was always a perfect gentleman and was a pleasure to takeout. This attribute has been passed down to many of his progeny. Likewise he has shown these attributes when performing stud duties.</p>
+                    </div>
+                </div>
+        
+                <div class="stallion-card" style="background: var(--card-bg); border-radius: var(--border-radius-md); overflow: hidden; box-shadow: 0 4px 15px var(--shadow-color); border: 1px solid var(--border-color); display: flex; flex-direction: column; md-flex-direction: row; transition: transform 0.3s ease;">
+                    <div class="bull-card-img-container" style="overflow: hidden; position: relative; background-color: var(--card-bg);">
+                        <img src="Mistic-Attraction-of-Featherstream.jpg" alt="[SOLD] Mistic Attraction of Featherstream" style="width: 100%; height: 100%; object-fit: contain; background-color: var(--card-bg);" class="clickable-img" onclick="openLightbox(this.src, this.alt)">
+                        <span style="position: absolute; top: 1rem; left: 1rem; background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;">Stallion</span>
+                    </div>
+                    <div style="padding: 2rem; flex: 1;">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.75rem; color: var(--primary-color); margin-bottom: 1rem;">[SOLD] Mistic Attraction of Featherstream</h3>
+                        
+                        <ul style="list-style: none; padding-left: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem; font-size: 0.9rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                            <li><strong>Registration:</strong> NZMHA - 1664</li>
+                            <li><strong>Date of birth:</strong> 14 March 1998</li>
+                            <li><strong>Height:</strong> 32.00”</li>
+                            <li><strong>Colour:</strong> Buckskin</li>
+                        </ul>
+                        
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-color);">Magnet, as he is affectionately known, has produced mainly filly foals over the years with very fine body type. Standing at stud to a very limited number of approved mares only.</p>
+                    </div>
+                </div>
+        
+            </div>
+        </section>
+
+        <section class="register-section" style="padding: 3rem 0; border-top: 1px solid var(--border-color);">
+            <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 2rem; color: var(--primary-color);">Miniature Horse Register</h2>
+    
+            <div class="category-block" style="margin-bottom: 3.5rem;">
+                <h3 style="font-family: var(--font-heading); font-size: 1.75rem; color: var(--accent-color); margin-bottom: 1.5rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem;">Fillies & Mares</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 2rem;">
+        
+                    <div class="horse-register-card" style="background: var(--card-bg); border-radius: var(--border-radius-md); border: 1px solid var(--border-color); box-shadow: 0 4px 10px var(--shadow-color); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                                <h4 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--primary-color);">Suncrest Mistic Krystal</h4>
+                                <span style="background-color: #cf2e2e; color: #ffffff; padding: 0.15rem 0.5rem; font-size: 0.7rem; font-weight: 700; border-radius: 4px; text-transform: uppercase;">Sold</span>
+                            </div>
+                            
+                            <ul style="list-style: none; padding-left: 0; font-size: 0.82rem; line-height: 1.5; color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><li><strong>Registration:</strong> NZMHA No. 5997 (Cat A)</li><li><strong>DOB:</strong> 25 October 2004</li><li><strong>Height:</strong> ~30.00”</li></ul>
+                            
+                            <p style="font-size: 0.92rem; line-height: 1.55; color: var(--text-color);">Beautiful fine buckskin filly, lovely nature, and ready for breeding this year.</p>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.75rem; margin-top: 1rem;"><img src="clip_image002_0021.jpg" alt="Suncrest Mistic Krystal" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"></div>
+                    </div>
+            
+                    <div class="horse-register-card" style="background: var(--card-bg); border-radius: var(--border-radius-md); border: 1px solid var(--border-color); box-shadow: 0 4px 10px var(--shadow-color); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                                <h4 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--primary-color);">Suncrest Casanovas Finesse</h4>
+                                <span style="background-color: #cf2e2e; color: #ffffff; padding: 0.15rem 0.5rem; font-size: 0.7rem; font-weight: 700; border-radius: 4px; text-transform: uppercase;">Sold</span>
+                            </div>
+                            
+                            <ul style="list-style: none; padding-left: 0; font-size: 0.82rem; line-height: 1.5; color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><li><strong>Registration:</strong> NZMHA No. 1145 (Cat A)</li><li><strong>DOB:</strong> 21 December 1995</li><li><strong>Height:</strong> 31.5”</li></ul>
+                            
+                            <p style="font-size: 0.92rem; line-height: 1.55; color: var(--text-color);">A fantastic little silver bay brood mare. Very easy to get into foal. Always has coloured, leggy foals which mature Category A.</p>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.75rem; margin-top: 1rem;"><img src="clip_image004_0002.jpg" alt="Suncrest Casanovas Finesse" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"><img src="055-finese-ghost-0812-cs.jpg" alt="Suncrest Casanovas Finesse" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"></div>
+                    </div>
+            
+                    <div class="horse-register-card" style="background: var(--card-bg); border-radius: var(--border-radius-md); border: 1px solid var(--border-color); box-shadow: 0 4px 10px var(--shadow-color); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                                <h4 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--primary-color);">NZ Windsongs Ruby Sancho (AMHA)</h4>
+                                <span style="background-color: #cf2e2e; color: #ffffff; padding: 0.15rem 0.5rem; font-size: 0.7rem; font-weight: 700; border-radius: 4px; text-transform: uppercase;">Sold</span>
+                            </div>
+                            
+                            
+                            
+                            
+                        </div>
+                        <p style="font-size: 0.8rem; font-style: italic; color: var(--text-muted); margin-top: 1rem;">No Photos Available</p>
+                    </div>
+            
+                    <div class="horse-register-card" style="background: var(--card-bg); border-radius: var(--border-radius-md); border: 1px solid var(--border-color); box-shadow: 0 4px 10px var(--shadow-color); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                                <h4 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--primary-color);">Glenshee Black Beauty</h4>
+                                <span style="background-color: #cf2e2e; color: #ffffff; padding: 0.15rem 0.5rem; font-size: 0.7rem; font-weight: 700; border-radius: 4px; text-transform: uppercase;">Sold</span>
+                            </div>
+                            
+                            <ul style="list-style: none; padding-left: 0; font-size: 0.82rem; line-height: 1.5; color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><li><strong>Registration:</strong> NZMHA No. 1098 (Cat B)</li><li><strong>DOB:</strong> 5 November 1989</li><li><strong>Height:</strong> 34.5”</li></ul>
+                            
+                            <p style="font-size: 0.92rem; line-height: 1.55; color: var(--text-color);">This lovely fine thoroughbred type senior mare would make a wonderful companion horse. Beauty is looking for a loving caring home where she will continue to live a healthy and active life.</p>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.75rem; margin-top: 1rem;"><img src="clip_image006_0001.jpg" alt="Glenshee Black Beauty" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"></div>
+                    </div>
+            
+                </div>
+            </div>
+        
+            <div class="category-block" style="margin-bottom: 3.5rem;">
+                <h3 style="font-family: var(--font-heading); font-size: 1.75rem; color: var(--accent-color); margin-bottom: 1.5rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem;">Colts & Stallions</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 2rem;">
+        
+                    <div class="horse-register-card" style="background: var(--card-bg); border-radius: var(--border-radius-md); border: 1px solid var(--border-color); box-shadow: 0 4px 10px var(--shadow-color); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                                <h4 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--primary-color);">Mistic Attraction of Featherstream</h4>
+                                <span style="background-color: #cf2e2e; color: #ffffff; padding: 0.15rem 0.5rem; font-size: 0.7rem; font-weight: 700; border-radius: 4px; text-transform: uppercase;">Sold</span>
+                            </div>
+                            
+                            <ul style="list-style: none; padding-left: 0; font-size: 0.82rem; line-height: 1.5; color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><li><strong>Registration:</strong> NZMHA No. 1664 (Cat A)</li><li><strong>DOB:</strong> 14 March 1998</li><li><strong>Height:</strong> 32.0”</li></ul>
+                            
+                            <p style="font-size: 0.92rem; line-height: 1.55; color: var(--text-color);">“Magnet” is a very athletic, fine buckskin stallion. His progeny, mainly fillies, are easily recognized by their very expressive ears, refined body type and lovely temperament. He is easy to serve and keeps himself in trim condition all year round.</p>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.75rem; margin-top: 1rem;"><img src="clip_image002_0025.jpg" alt="Mistic Attraction of Featherstream" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"><img src="clip_image004_0004.jpg" alt="Mistic Attraction of Featherstream" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"><img src="clip_image006_0002.jpg" alt="Mistic Attraction of Featherstream" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"></div>
+                    </div>
+            
+                    <div class="horse-register-card" style="background: var(--card-bg); border-radius: var(--border-radius-md); border: 1px solid var(--border-color); box-shadow: 0 4px 10px var(--shadow-color); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                                <h4 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--primary-color);">Suncrest Casanova</h4>
+                                <span style="background-color: #cf2e2e; color: #ffffff; padding: 0.15rem 0.5rem; font-size: 0.7rem; font-weight: 700; border-radius: 4px; text-transform: uppercase;">Sold</span>
+                            </div>
+                            
+                            <ul style="list-style: none; padding-left: 0; font-size: 0.82rem; line-height: 1.5; color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><li><strong>Registration:</strong> NZMHA No. 1127 (Cat A)</li><li><strong>DOB:</strong> 19 November 1991</li><li><strong>Height:</strong> 29.0”</li></ul>
+                            
+                            <p style="font-size: 0.92rem; line-height: 1.55; color: var(--text-color);">“Cassy” is a rich chestnut stallion and would make a great companion to an older mare. He hasn't served a mare in ~10 years but has been a proven height reducer. He is a real gentleman to handle, has a great temperament, is energetic and loves company. All this in a 29 inch package!</p>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.75rem; margin-top: 1rem;"><img src="clip_image002_0026.jpg" alt="Suncrest Casanova" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"><img src="clip_image002_0027.jpg" alt="Suncrest Casanova" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"></div>
+                    </div>
+            
+                </div>
+            </div>
+        
+            <div class="category-block" style="margin-bottom: 3.5rem;">
+                <h3 style="font-family: var(--font-heading); font-size: 1.75rem; color: var(--accent-color); margin-bottom: 1.5rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem;">Geldings</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 2rem;">
+        
+                    <div class="horse-register-card" style="background: var(--card-bg); border-radius: var(--border-radius-md); border: 1px solid var(--border-color); box-shadow: 0 4px 10px var(--shadow-color); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                                <h4 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--primary-color);">Suncrest Smokeys Picasso</h4>
+                                <span style="background-color: #cf2e2e; color: #ffffff; padding: 0.15rem 0.5rem; font-size: 0.7rem; font-weight: 700; border-radius: 4px; text-transform: uppercase;">Sold</span>
+                            </div>
+                            
+                            <ul style="list-style: none; padding-left: 0; font-size: 0.82rem; line-height: 1.5; color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><li><strong>Registration:</strong> AMHA No. A167804</li><li><strong>DOB:</strong> 30 October 2005</li><li><strong>Height:</strong> 33 ”</li></ul>
+                            
+                            <p style="font-size: 0.92rem; line-height: 1.55; color: var(--text-color);">NZMHA No. 6507 (Cat A) “Jaz” as he is affectionately known is a wonderful silver bay pinto with great show potential. He is very classy, has a refined head and fantastic movement. This little guy has it all – colour, conformation, movement and heaps of personality and presence. Has good harness potential.</p>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.75rem; margin-top: 1rem;"><img src="clip_image002_0023.jpg" alt="Suncrest Smokeys Picasso" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"><img src="jazz.jpg" alt="Suncrest Smokeys Picasso" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"><img src="casper-eclipse-jazz.jpg" alt="Suncrest Smokeys Picasso" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"></div>
+                    </div>
+            
+                    <div class="horse-register-card" style="background: var(--card-bg); border-radius: var(--border-radius-md); border: 1px solid var(--border-color); box-shadow: 0 4px 10px var(--shadow-color); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                                <h4 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--primary-color);">Suncrest Mistic Ghost</h4>
+                                <span style="background-color: #cf2e2e; color: #ffffff; padding: 0.15rem 0.5rem; font-size: 0.7rem; font-weight: 700; border-radius: 4px; text-transform: uppercase;">Sold</span>
+                            </div>
+                            
+                            <ul style="list-style: none; padding-left: 0; font-size: 0.82rem; line-height: 1.5; color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><li><strong>Registration:</strong> NZMHA No. TBA (Cat A)</li><li><strong>DOB:</strong> 9 December 2008</li><li><strong>Height:</strong> 31"</li></ul>
+                            
+                            <p style="font-size: 0.92rem; line-height: 1.55; color: var(--text-color);">Paddock name “Casper” this leggy silver buckskin is a stunner, very straight in the legs and is a nice mover with heaps of attitude.</p>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.75rem; margin-top: 1rem;"><img src="clip_image002_0041.jpg" alt="Suncrest Mistic Ghost" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"><img src="casper.jpg" alt="Suncrest Mistic Ghost" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"><img src="casper-eclipse-jazz.jpg" alt="Suncrest Mistic Ghost" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"></div>
+                    </div>
+            
+                    <div class="horse-register-card" style="background: var(--card-bg); border-radius: var(--border-radius-md); border: 1px solid var(--border-color); box-shadow: 0 4px 10px var(--shadow-color); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                                <h4 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--primary-color);">Suncrest Smokeys Eclipse</h4>
+                                <span style="background-color: #cf2e2e; color: #ffffff; padding: 0.15rem 0.5rem; font-size: 0.7rem; font-weight: 700; border-radius: 4px; text-transform: uppercase;">Sold</span>
+                            </div>
+                            
+                            <ul style="list-style: none; padding-left: 0; font-size: 0.82rem; line-height: 1.5; color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><li><strong>Registration:</strong> NZMHA No. TBA (Cat A)</li><li><strong>DOB:</strong> 6 December 2008</li><li><strong>Height:</strong> 29"</li></ul>
+                            
+                            <p style="font-size: 0.92rem; line-height: 1.55; color: var(--text-color);">This delightful red bay colt is very fine, leggy and correct. A gelding with lots of character and presence</p>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.75rem; margin-top: 1rem;"><img src="113-eclipse-cs.jpg" alt="Suncrest Smokeys Eclipse" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"><img src="IMG_4269cs-eclipse-110131.jpg" alt="Suncrest Smokeys Eclipse" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"><img src="casper-eclipse-jazz.jpg" alt="Suncrest Smokeys Eclipse" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"></div>
+                    </div>
+            
+                    <div class="horse-register-card" style="background: var(--card-bg); border-radius: var(--border-radius-md); border: 1px solid var(--border-color); box-shadow: 0 4px 10px var(--shadow-color); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                                <h4 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--primary-color);">Suncrest Smokeys Lil Spark</h4>
+                                <span style="background-color: #cf2e2e; color: #ffffff; padding: 0.15rem 0.5rem; font-size: 0.7rem; font-weight: 700; border-radius: 4px; text-transform: uppercase;">Sold</span>
+                            </div>
+                            
+                            <ul style="list-style: none; padding-left: 0; font-size: 0.82rem; line-height: 1.5; color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;"><li><strong>Registration:</strong> NZMHA No. 4784 (Cat A)Suncrest Smokeys Lil Spark 2</li><li><strong>DOB:</strong> 7 December 2002</li><li><strong>Height:</strong> 32.0”</li></ul>
+                            
+                            <p style="font-size: 0.92rem; line-height: 1.55; color: var(--text-color);">This delightful red bay gelding is ready for anything – “Sparky” is fun loving and responds well to any training. He is very willing to please and would make a great wee companion. He is quite a show-off - prancing, and demonstrating his paces readily to any audiences.</p>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.75rem; margin-top: 1rem;"><img src="clip_image002_0022.jpg" alt="Suncrest Smokeys Lil Spark" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"><img src="clip_image004_0003.jpg" alt="Suncrest Smokeys Lil Spark" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"><img src="clip_image002_0016.jpg" alt="Suncrest Smokeys Lil Spark" style="width: 100%; height: 100px; object-fit: contain; background-color: var(--card-bg); border-radius: 4px;" class="clickable-img" onclick="openLightbox(this.src, this.alt)"></div>
+                    </div>
+            
+                </div>
+            </div>
+        
+        </section>
+        
+        <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; margin-bottom: 4rem;">
+            <a href="horseinfo.html" class="btn btn-secondary">Learn More</a>
+        </div>
+        
+        <script>
+            function openLightbox(src, alt) {
+                const overlay = document.createElement('div');
+                overlay.style.position = 'fixed';
+                overlay.style.top = '0';
+                overlay.style.left = '0';
+                overlay.style.width = '100vw';
+                overlay.style.height = '100vh';
+                overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                overlay.style.zIndex = '10000';
+                overlay.style.display = 'flex';
+                overlay.style.flexDirection = 'column';
+                overlay.style.alignItems = 'center';
+                overlay.style.justifyContent = 'center';
+                overlay.style.cursor = 'zoom-out';
+                
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = alt || '';
+                img.style.maxWidth = '90%';
+                img.style.maxHeight = '80%';
+                img.style.borderRadius = '8px';
+                img.style.boxShadow = '0 10px 40px rgba(0,0,0,0.5)';
+                img.style.transition = 'transform 0.3s ease';
+                
+                const caption = document.createElement('p');
+                caption.textContent = alt || '';
+                caption.style.color = '#ffffff';
+                caption.style.marginTop = '15px';
+                caption.style.fontFamily = 'var(--font-body)';
+                caption.style.fontSize = '1rem';
+                caption.style.textAlign = 'center';
+                caption.style.padding = '0 20px';
+                
+                const closeBtn = document.createElement('button');
+                closeBtn.innerHTML = '&times;';
+                closeBtn.style.position = 'absolute';
+                closeBtn.style.top = '20px';
+                closeBtn.style.right = '30px';
+                closeBtn.style.background = 'none';
+                closeBtn.style.border = 'none';
+                closeBtn.style.color = '#ffffff';
+                closeBtn.style.fontSize = '3rem';
+                closeBtn.style.cursor = 'pointer';
+                
+                overlay.appendChild(img);
+                if (alt) overlay.appendChild(caption);
+                overlay.appendChild(closeBtn);
+                
+                overlay.onclick = function() {
+                    document.body.removeChild(overlay);
+                };
+                
+                document.body.appendChild(overlay);
+            }
+        </script>
+    
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <a href="index.html#home" class="logo-link">
+                    <img src="suncrestclear.png" alt="Suncrest Stud" class="logo-img footer-logo-img">
+                </a>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p class="copy-text">&copy; 2026 Suncrest Stud. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+    
+</body>
+</html>
